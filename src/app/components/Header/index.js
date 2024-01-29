@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <>
       <S.Header>
-        <h1>DevRael</h1>
+        <span>DevRael</span>
 
         {asideOpen ? (
           <BsXLg fontSize={24} color="#FFF" onClick={handleAsideOpen} />

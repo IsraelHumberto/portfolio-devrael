@@ -7,7 +7,8 @@ export const Header = styled.header`
 
   padding: 1rem;
 
-  h1 {
+  span {
     color: var(--white);
+    font-size: 1.6rem;
   }
 `;

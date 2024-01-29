@@ -19,10 +19,17 @@
   --white: #fff;
 
   --maxWidth: 1024px;
+
+  --padding-section: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%;
 }
 
@@ -91,7 +98,6 @@ td {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
 }

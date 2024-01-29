@@ -20,7 +20,7 @@ export const Menu = styled.div`
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.4rem;
 
   a {
     display: flex;
@@ -37,6 +37,7 @@ export const Hashtag = styled.div`
 
 export const Label = styled.span`
   color: var(--secondary);
+  font-size: 2rem;
 
   &:hover {
     color: #fff;
