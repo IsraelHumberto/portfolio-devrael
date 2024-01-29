@@ -12,6 +12,8 @@ export const Menu = styled.div`
 
   transition: left 0.3s ease-in-out;
 
+  z-index: 100;
+
   nav {
     padding: 2rem 1rem;
   }
