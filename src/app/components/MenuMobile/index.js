@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styles";
 import Link from "next/link";
 import { SocialsIcons } from "../SocialsIcons";
@@ -14,6 +14,11 @@ const links = [
 ];
 
 export const MenuMobile = ({ asideOpen }) => {
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = asideOpen ? "hidden" : "auto";
+  });
+
   return (
     <S.Menu open={asideOpen}>
       <nav>
