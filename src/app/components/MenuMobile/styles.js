@@ -37,4 +37,11 @@ export const Hashtag = styled.div`
 
 export const Label = styled.span`
   color: var(--secondary);
+
+  &:hover {
+    color: #fff;
+    transition: color 0.1s ease-in-out;
+  }
+
+  transition: color 0.1s ease-in-out;
 `;

@@ -3,6 +3,7 @@
 import React from "react";
 import * as S from "./styles";
 import Link from "next/link";
+import { SocialsIcons } from "../SocialsIcons";
 
 const links = [
   { href: "#", label: "Home" },
@@ -27,6 +28,7 @@ export const MenuMobile = ({ asideOpen }) => {
           ))}
         </S.List>
       </nav>
+      <SocialsIcons />
     </S.Menu>
   );
 };
