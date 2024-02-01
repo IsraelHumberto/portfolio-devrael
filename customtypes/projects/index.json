@@ -1,0 +1,142 @@
+{
+  "id": "projects",
+  "label": "Projects",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "title_section": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title Section",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "description_section": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description Section",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "all_projects": {
+        "type": "Group",
+        "config": {
+          "label": "All Projects",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "desciption": {
+              "type": "Text",
+              "config": {
+                "label": "Desciption",
+                "placeholder": ""
+              }
+            },
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {
+                  "width": 330,
+                  "height": 201
+                },
+                "thumbnails": []
+              }
+            },
+            "home": {
+              "type": "Boolean",
+              "config": {
+                "label": "Home",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            },
+            "date": {
+              "type": "Date",
+              "config": {
+                "label": "Date",
+                "placeholder": ""
+              }
+            },
+            "link_live": {
+              "type": "Link",
+              "config": {
+                "label": "Link Live",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "link_github": {
+              "type": "Link",
+              "config": {
+                "label": "Link Github",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "tools": {
+              "type": "Text",
+              "config": {
+                "label": "Tools",
+                "placeholder": "EX: HTML - CSS - Js - React.js"
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}
