@@ -32,5 +32,7 @@ export const Projects = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 26px;
+
+  margin-top: 36px;
 `;

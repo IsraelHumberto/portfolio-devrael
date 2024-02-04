@@ -190,7 +190,71 @@ export type ProjectsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = ProjectsDocument;
+/**
+ * Item in *Skills → icons*
+ */
+export interface SkillsDocumentDataIconsItem {
+  /**
+   * name field in *Skills → icons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.icons[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * svg field in *Skills → icons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.icons[].svg
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  svg: prismic.KeyTextField;
+}
+
+/**
+ * Content for Skills documents
+ */
+interface SkillsDocumentData {
+  /**
+   * icons field in *Skills*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.icons[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  icons: prismic.GroupField<Simplify<SkillsDocumentDataIconsItem>>;
+
+  /**
+   * size field in *Skills*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.size
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  size: prismic.NumberField;
+}
+
+/**
+ * Skills document from Prismic
+ *
+ * - **API ID**: `skills`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SkillsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
+
+export type AllDocumentTypes = ProjectsDocument | SkillsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -206,6 +270,9 @@ declare module "@prismicio/client" {
       ProjectsDocumentData,
       ProjectsDocumentDataAllProjectsItem,
       ProjectsDocumentDataSlicesSlice,
+      SkillsDocument,
+      SkillsDocumentData,
+      SkillsDocumentDataIconsItem,
       AllDocumentTypes,
     };
   }

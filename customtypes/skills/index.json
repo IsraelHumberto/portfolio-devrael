@@ -1,0 +1,47 @@
+{
+  "id": "skills",
+  "label": "Skills",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "icons": {
+        "type": "Group",
+        "config": {
+          "label": "icons",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "name",
+                "placeholder": ""
+              }
+            },
+            "svg": {
+              "type": "Text",
+              "config": {
+                "label": "svg",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "size": {
+        "type": "Number",
+        "config": {
+          "label": "size",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
