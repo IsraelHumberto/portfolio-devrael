@@ -28,7 +28,7 @@ export const Project = ({ data }) => {
 
           {data.link_github.url && (
             <S.Btn
-              secondary={true}
+              secondary="true"
               href={data.link_github.url}
               target={data.link_github.target}
             >
