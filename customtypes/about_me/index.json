@@ -1,0 +1,41 @@
+{
+  "id": "about_me",
+  "label": "About Me",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "pdf": {
+        "type": "Link",
+        "config": {
+          "label": "pdf",
+          "placeholder": "",
+          "select": "media"
+        }
+      },
+      "text": {
+        "type": "Group",
+        "config": {
+          "label": "Text",
+          "repeat": true,
+          "fields": {
+            "paragraph": {
+              "type": "Text",
+              "config": {
+                "label": "paragraph",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
