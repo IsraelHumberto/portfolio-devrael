@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import { FaRegFilePdf } from "react-icons/fa6";
 
 export const AboutMeSection = ({ data }) => {
-  console.log(data);
   return (
     <S.Container>
       <TitleSection title="Sobre mim" />

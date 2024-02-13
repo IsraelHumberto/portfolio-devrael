@@ -26,6 +26,10 @@ const routes = [
     type: "skills",
     path: "/",
   },
+  {
+    type: "about_me",
+    path: "/",
+  },
   // {
   // 	type: "page",
   // 	path: "/:uid",
