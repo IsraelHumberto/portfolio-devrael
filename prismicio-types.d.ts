@@ -5,6 +5,64 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *About Me → Text*
+ */
+export interface AboutMeDocumentDataTextItem {
+  /**
+   * paragraph field in *About Me → Text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.text[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraph: prismic.KeyTextField;
+}
+
+/**
+ * Content for About Me documents
+ */
+interface AboutMeDocumentData {
+  /**
+   * pdf field in *About Me*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.pdf
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  pdf: prismic.LinkToMediaField;
+
+  /**
+   * Text field in *About Me*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.text[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  text: prismic.GroupField<Simplify<AboutMeDocumentDataTextItem>>;
+}
+
+/**
+ * About Me document from Prismic
+ *
+ * - **API ID**: `about_me`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutMeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AboutMeDocumentData>,
+    "about_me",
+    Lang
+  >;
+
+/**
  * Item in *Projects → All Projects*
  */
 export interface ProjectsDocumentDataAllProjectsItem {
@@ -254,7 +312,10 @@ interface SkillsDocumentData {
 export type SkillsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
 
-export type AllDocumentTypes = ProjectsDocument | SkillsDocument;
+export type AllDocumentTypes =
+  | AboutMeDocument
+  | ProjectsDocument
+  | SkillsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -266,6 +327,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutMeDocument,
+      AboutMeDocumentData,
+      AboutMeDocumentDataTextItem,
       ProjectsDocument,
       ProjectsDocumentData,
       ProjectsDocumentDataAllProjectsItem,

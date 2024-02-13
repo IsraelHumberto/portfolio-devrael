@@ -6,6 +6,7 @@ import { createClient } from "@/prismicio";
 import { MainProjects } from "./components/MainProjects";
 import { Project } from "./components/Project";
 import { SkillsSection } from "./components/SkillsSection";
+import { AboutMeSection } from "./components/AboutMeSection";
 
 export default async function Home() {
   const prismic = createClient();
@@ -13,6 +14,8 @@ export default async function Home() {
   const projects = await prismic.getByUID("projects", "projects-section");
 
   const skills = await prismic.getByUID("skills", "skills-home");
+
+  const aboutMe = await prismic.getByUID("about_me", "about-me-home");
 
   return (
     <main className={styles.main}>
@@ -23,6 +26,7 @@ export default async function Home() {
         title={projects.data.title_section[0].text}
       />
       <SkillsSection data={skills.data} />
+      <AboutMeSection data={aboutMe.data} />
     </main>
   );
 }
