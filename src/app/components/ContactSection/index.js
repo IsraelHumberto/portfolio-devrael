@@ -5,7 +5,7 @@ import { TitleSection } from "../TitleSection";
 import { Field, Formik, ErrorMessage } from "formik";
 import * as S from "./styles";
 import * as Yup from "yup";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import emaijs from "@emailjs/browser";
 
 export const ContactSection = () => {
@@ -66,7 +66,8 @@ export const ContactSection = () => {
           message: "primeira mensagem",
           title: "Titulo vaga",
         }}
-        onSubmit={(values) => captcha && handleSubmit(values)}
+        // onSubmit={(values) => captcha && handleSubmit(values)}
+        onSubmit={(values) => handleSubmit(values)}
         validationSchema={validationSchema}
       >
         {({ handleSubmit }) => (
@@ -114,11 +115,6 @@ export const ContactSection = () => {
                   className="errorField"
                 />
               </S.InputFieldset>
-
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={setCaptcha}
-              />
 
               <S.Btn type="submit">Enviar</S.Btn>
             </S.InputContainer>
