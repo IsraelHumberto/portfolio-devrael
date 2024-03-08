@@ -61,10 +61,10 @@ export const ContactSection = () => {
       <TitleSection title="Contato" />
       <Formik
         initialValues={{
-          name: "Israel",
-          email: "israelfluzao@gmail.com",
-          message: "primeira mensagem",
-          title: "Titulo vaga",
+          name: "",
+          email: "",
+          message: "",
+          title: "",
         }}
         // onSubmit={(values) => captcha && handleSubmit(values)}
         onSubmit={(values) => handleSubmit(values)}
