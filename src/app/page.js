@@ -7,6 +7,7 @@ import { MainProjects } from "./components/MainProjects";
 import { Project } from "./components/Project";
 import { SkillsSection } from "./components/SkillsSection";
 import { AboutMeSection } from "./components/AboutMeSection";
+import ContactSection from "./components/ContactSection";
 
 export default async function Home() {
   const prismic = createClient();
@@ -27,6 +28,7 @@ export default async function Home() {
       />
       <SkillsSection data={skills.data} />
       <AboutMeSection data={aboutMe.data} />
+      <ContactSection />
     </main>
   );
 }
